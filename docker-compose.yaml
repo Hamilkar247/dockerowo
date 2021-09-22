@@ -10,4 +10,9 @@ services:
       FLASK_ENV: development
   redis:
     image: "redis:alpine"
-
+  db_sqlite:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db/:/code/
